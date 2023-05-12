@@ -1,28 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Button from './Button';
+import Modal from './Modal';
 
-const meta: Meta<typeof Button> = {
-    title: 'ATOMS/Button',
-    component: Button,
+const meta: Meta<typeof Modal> = {
+    title: 'Provider/Modal',
+    component: Modal,
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
     tags: ['autodocs'],
     // parameters: {
     //     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
     //     layout: 'centered',
     // },
-    //    argTypes: {
-    //         backgroundColor: {
-    //             control: 'color',
-    //         },
-    //     },
 };
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof Modal>;
 
 export const Default: Story = {
     args: {
-        variant: 'primary',
-        label: 'Button',
+        type: 'success',
+        title: 'Welcome to modal',
+        children: <p>Ahihi</p>,
     },
 };

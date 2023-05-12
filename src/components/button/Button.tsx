@@ -1,5 +1,8 @@
 import React from 'react';
 import styles from './Button.module.scss';
+import classNames from 'classnames';
+
+type ButtonVariant = 'primary' | 'secondary';
 
 interface ButtonProps {
     /**
@@ -22,24 +25,31 @@ interface ButtonProps {
      * Active or disable button
      */
     disabled?: boolean;
+    /**
+     * Set up onclick
+     */
+    onClick?: () => void;
+
+    variant?: ButtonVariant;
 }
 
 export default function Button({
-    primary = false,
+    variant = 'primary',
     label,
     backgroundColor,
     hoverColor,
     disabled,
-    ...props
+    onClick,
 }: ButtonProps) {
     return (
         <button
             type="button"
-            className={[
-                primary ? styles.primary : styles.secondary,
-                styles.button,
-                disabled ? styles.disabled : '',
-            ].join(' ')}
+            className={classNames({
+                [styles[variant]]: true,
+                [styles.disabled]: disabled,
+                [styles.button]: true,
+            })}
+            onClick={onClick}
         >
             {label}
             <style jsx>{`
