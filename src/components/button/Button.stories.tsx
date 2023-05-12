@@ -10,6 +10,11 @@ const meta: Meta<typeof Button> = {
     //     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
     //     layout: 'centered',
     // },
+    //    argTypes: {
+    //         backgroundColor: {
+    //             control: 'color',
+    //         },
+    //     },
 };
 
 export default meta;

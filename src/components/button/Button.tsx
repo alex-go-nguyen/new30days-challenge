@@ -7,7 +7,7 @@ interface ButtonProps {
      */
     primary?: boolean;
     /**
-     * Choose color for background button?
+     * What color of the button's background?
      */
     backgroundColor?: string;
     /**
@@ -18,12 +18,38 @@ interface ButtonProps {
      * Choose hoverColor
      */
     hoverColor?: string;
+    /**
+     * Active or disable button
+     */
+    disabled?: boolean;
 }
 
-export default function Button({ primary = false, label, backgroundColor, hoverColor, ...props }: ButtonProps) {
+export default function Button({
+    primary = false,
+    label,
+    backgroundColor,
+    hoverColor,
+    disabled,
+    ...props
+}: ButtonProps) {
     return (
-        <button type="button" className={[primary ? styles.primary : styles.secondary, styles.button].join(' ')}>
+        <button
+            type="button"
+            className={[
+                primary ? styles.primary : styles.secondary,
+                styles.button,
+                disabled ? styles.disabled : '',
+            ].join(' ')}
+        >
             {label}
+            <style jsx>{`
+                button {
+                    background-color: ${backgroundColor};
+                }
+                button:hover {
+                    background-color: ${hoverColor};
+                }
+            `}</style>
         </button>
     );
 }

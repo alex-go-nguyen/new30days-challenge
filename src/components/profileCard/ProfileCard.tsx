@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styles from './ProfileCard.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaFacebookF, FaYoutube, FaTiktok, FaGithub } from 'react-icons/fa';
 import Button from '../button/Button';
 import Link from 'next/link';
