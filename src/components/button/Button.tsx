@@ -3,8 +3,10 @@ import styles from './Button.module.scss';
 import classNames from 'classnames';
 
 type ButtonVariant = 'primary' | 'secondary';
+type ButoonSize = 'small' | 'medium' | 'large';
 
 interface ButtonProps {
+    size?: ButoonSize;
     /**
      * What color of the button's background?
      */
@@ -30,6 +32,7 @@ interface ButtonProps {
 }
 
 export default function Button({
+    size = 'medium',
     variant = 'primary',
     label,
     backgroundColor,
@@ -44,6 +47,7 @@ export default function Button({
                 [styles[variant]]: true,
                 [styles.disabled]: disabled,
                 [styles.button]: true,
+                [styles[size]]: true,
             })}
             onClick={onClick}
         >

@@ -26,3 +26,27 @@ export const Default: Story = {
         label: 'Button',
     },
 };
+
+export const Small: Story = {
+    args: {
+        size: 'small',
+        variant: 'primary',
+        label: 'Button',
+    },
+};
+
+export const Medium: Story = {
+    args: {
+        size: 'medium',
+        variant: 'primary',
+        label: 'Button',
+    },
+};
+
+export const Large: Story = {
+    args: {
+        size: 'large',
+        variant: 'primary',
+        label: 'Button',
+    },
+};

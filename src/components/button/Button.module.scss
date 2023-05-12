@@ -1,8 +1,23 @@
 @import '../../styles/globals.css';
 .button {
     padding: 10px 20px;
-    border-radius: 16px;
+    border-radius: 12px;
     cursor: pointer;
+}
+
+.small {
+    padding: 6px 16px;
+    font-size: 14px;
+}
+
+.medium {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.large {
+    padding: 14px 24px;
+    font-size: 18;
 }
 
 .primary {
