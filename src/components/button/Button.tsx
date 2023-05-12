@@ -6,10 +6,6 @@ type ButtonVariant = 'primary' | 'secondary';
 
 interface ButtonProps {
     /**
-     * Is this the principal call to action on the page?
-     */
-    primary?: boolean;
-    /**
      * What color of the button's background?
      */
     backgroundColor?: string;
