@@ -1,0 +1,39 @@
+@import '../../styles/globals.css';
+
+.search-box {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.25s;
+}
+
+.show {
+    transition: all 0.25s;
+    width: 420px;
+}
+
+.input {
+    max-width: 100%;
+    border-radius: 12px;
+
+    color: var(--white-color);
+    font-size: 24px;
+    padding: 20px 200px 20px 35px;
+    border-radius: 12px;
+    background-color: var(--input-color);
+    border: none;
+}
+
+.btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 100%;
+    background-color: var(--white-color);
+    font-size: 24px;
+    border: 1px solid var(--white-color);
+    cursor: pointer;
+}
