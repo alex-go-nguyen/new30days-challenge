@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './Button.module.scss';
+import classNames from 'classnames';
+
+type ButtonVariant = 'primary' | 'secondary';
+type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps {
-    /**
-     * Is this the principal call to action on the page?
-     */
-    primary?: boolean;
+    size?: ButtonSize;
     /**
      * What color of the button's background?
      */
@@ -22,24 +23,33 @@ interface ButtonProps {
      * Active or disable button
      */
     disabled?: boolean;
+    /**
+     * Set up onclick
+     */
+    onClick?: () => void;
+
+    variant?: ButtonVariant;
 }
 
 export default function Button({
-    primary = false,
+    size = 'md',
+    variant = 'primary',
     label,
     backgroundColor,
     hoverColor,
     disabled,
-    ...props
+    onClick,
 }: ButtonProps) {
     return (
         <button
             type="button"
-            className={[
-                primary ? styles.primary : styles.secondary,
-                styles.button,
-                disabled ? styles.disabled : '',
-            ].join(' ')}
+            className={classNames({
+                [styles[variant]]: true,
+                [styles.disabled]: disabled,
+                [styles.button]: true,
+                [styles[size]]: true,
+            })}
+            onClick={onClick}
         >
             {label}
             <style jsx>{`

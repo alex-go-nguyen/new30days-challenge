@@ -1,7 +1,7 @@
+import Gallery from '@/components/gallery/Gallery';
+import Image from '@/components/image/Image';
+import { useState } from 'react';
+
 export default function Home() {
-    return (
-        <div>
-            <h1>Weo căm to mai website</h1>
-        </div>
-    );
+    return <div>Hello</div>;
 }

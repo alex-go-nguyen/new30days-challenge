@@ -2,7 +2,6 @@ import * as React from 'react';
 import styles from './ProfileCard.module.scss';
 import { FaFacebookF, FaYoutube, FaTiktok, FaGithub } from 'react-icons/fa';
 import Button from '../button/Button';
-import Link from 'next/link';
 
 export interface ProfileCardProps {
     /**
@@ -41,7 +40,7 @@ export default function ProfileCard({ imageUrl, ...props }: ProfileCardProps) {
                 </span>
             </div>
             <div className={styles.action}>
-                <Button primary label="Contact me" backgroundColor="transparent" />
+                <Button variant="primary" label="Contact me" backgroundColor="#f2726a" />
             </div>
         </div>
     );

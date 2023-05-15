@@ -1,0 +1,77 @@
+@import '../../styles/globals.css';
+
+@keyframes floatDown {
+    0% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.modal {
+    position: fixed;
+    display: none;
+    z-index: 10;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.isOpened {
+    display: block;
+}
+
+.container {
+    margin: 200px auto;
+    max-width: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+    animation: floatDown 0.25s ease-in;
+    background-color: var(--white-color);
+}
+
+.success {
+    background-color: var(--green-color) !important;
+}
+.error {
+    background-color: var(--red-color) !important;
+}
+
+.heading {
+    padding: 2px 16px;
+    position: relative;
+    color: var(--white-color);
+    .title {
+        color: var(--white-color);
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .closeIcon {
+        position: absolute;
+        font-weight: 600;
+        font-size: 26px;
+        cursor: pointer;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.content {
+    padding: 0px 16px;
+    .title {
+        color: var(--pink-color);
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .description {
+        font-size: 500;
+    }
+
+    .closeBtn {
+        text-align: right;
+        padding: 24px 0;
+    }
+}
