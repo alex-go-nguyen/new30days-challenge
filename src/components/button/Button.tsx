@@ -3,10 +3,10 @@ import styles from './Button.module.scss';
 import classNames from 'classnames';
 
 type ButtonVariant = 'primary' | 'secondary';
-type ButoonSize = 'small' | 'medium' | 'large';
+type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps {
-    size?: ButoonSize;
+    size?: ButtonSize;
     /**
      * What color of the button's background?
      */
@@ -32,7 +32,7 @@ interface ButtonProps {
 }
 
 export default function Button({
-    size = 'medium',
+    size = 'md',
     variant = 'primary',
     label,
     backgroundColor,

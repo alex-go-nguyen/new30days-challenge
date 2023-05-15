@@ -29,7 +29,7 @@ export const Default: Story = {
 
 export const Small: Story = {
     args: {
-        size: 'small',
+        size: 'sm',
         variant: 'primary',
         label: 'Button',
     },
@@ -37,7 +37,7 @@ export const Small: Story = {
 
 export const Medium: Story = {
     args: {
-        size: 'medium',
+        size: 'md',
         variant: 'primary',
         label: 'Button',
     },
@@ -45,7 +45,7 @@ export const Medium: Story = {
 
 export const Large: Story = {
     args: {
-        size: 'large',
+        size: 'lg',
         variant: 'primary',
         label: 'Button',
     },
