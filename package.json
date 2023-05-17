@@ -12,9 +12,11 @@
         "build-storybook": "storybook build"
     },
     "dependencies": {
+        "@hookform/resolvers": "^3.1.0",
         "@types/node": "20.1.2",
         "@types/react": "18.2.6",
         "@types/react-dom": "18.2.4",
+        "@types/yup": "^0.32.0",
         "autoprefixer": "10.4.14",
         "classnames": "^2.3.2",
         "eslint": "8.40.0",
@@ -23,8 +25,12 @@
         "postcss": "8.4.23",
         "react": "18.2.0",
         "react-dom": "18.2.0",
+        "react-hook-form": "^7.43.9",
         "react-icons": "^4.8.0",
-        "typescript": "5.0.4"
+        "typescript": "5.0.4",
+        "up": "^1.0.2",
+        "uuid": "^9.0.0",
+        "yup": "^1.1.1"
     },
     "devDependencies": {
         "@fortawesome/fontawesome-free": "^6.4.0",
@@ -35,6 +41,7 @@
         "@storybook/nextjs": "^7.0.10",
         "@storybook/react": "^7.0.10",
         "@storybook/testing-library": "^0.0.14-next.2",
+        "@types/uuid": "^9.0.1",
         "eslint-plugin-storybook": "^0.6.12",
         "husky": "^8.0.3",
         "sass": "^1.62.1",
