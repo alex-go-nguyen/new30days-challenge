@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './ImageList.module.scss';
 import Gallery, { Item } from '../gallery/Gallery';
 import Image from '../image/Image';
+import useBoolean from '../../hooks/useBoolean';
 const cx = classNames.bind(styles);
 
 export interface ImageListProps {
@@ -10,15 +11,12 @@ export interface ImageListProps {
 }
 
 export default function ImageList({ data }: ImageListProps) {
-    const [open, setOpen] = useState(false);
     const [imageShowId, setImageShowId] = useState(0);
+    const { value, setTrue, setFalse } = useBoolean(false);
 
-    const handleClose = () => {
-        setOpen(false);
-    };
     const handleChooseImage = (index: number) => {
         setImageShowId(index);
-        setOpen(true);
+        setTrue();
     };
     const handleChangeImage = (index: number) => {
         setImageShowId(index);
@@ -34,8 +32,8 @@ export default function ImageList({ data }: ImageListProps) {
                 ))}
             </div>
             <Gallery
-                isOpen={open}
-                onClose={handleClose}
+                isOpen={value}
+                onClose={setFalse}
                 data={data}
                 index={imageShowId}
                 onChange={(index) => handleChangeImage(index)}

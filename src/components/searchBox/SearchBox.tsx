@@ -6,6 +6,7 @@ const cx = classNames.bind(styles);
 export interface SearchBoxProps {}
 
 export default function SearchBox(props: SearchBoxProps) {
+    console.log('Test PR template');
     const [isOpenSearchBox, setIsOpenSearchBox] = useState(false);
     const handleOpenSearchBox = () => {
         setIsOpenSearchBox(!isOpenSearchBox);
