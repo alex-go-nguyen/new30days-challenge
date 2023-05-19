@@ -15,6 +15,7 @@ interface ButtonProps {
      * Button contents
      */
     label: string;
+    color?: string;
     /**
      * Choose hoverColor
      */
@@ -35,6 +36,7 @@ export default function Button({
     size = 'md',
     variant = 'primary',
     label,
+    color = 'success',
     backgroundColor,
     hoverColor,
     disabled,
@@ -48,6 +50,7 @@ export default function Button({
                 [styles.disabled]: disabled,
                 [styles.button]: true,
                 [styles[size]]: true,
+                [styles[color]]: true,
             })}
             onClick={onClick}
         >

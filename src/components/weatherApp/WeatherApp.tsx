@@ -58,7 +58,7 @@ export default function WeatherApp({ data }: WeatherAppProps) {
         reset();
     };
     return (
-        <form className={cx('container')} onSubmit={handleSubmit(onSubmitHandler)}>
+        <form className={cx('container')} onSubmit={handleSubmit(onSubmitHandler)} autoComplete="off">
             <style jsx>
                 {`
                     form {
@@ -68,7 +68,7 @@ export default function WeatherApp({ data }: WeatherAppProps) {
                     }
                 `}
             </style>
-            <input placeholder="Search..." className={cx('search')} {...register('city')} />
+            <input placeholder="Search..." className={cx('search')} {...register('city')} autoComplete="off" />
             <div className={cx('body')}>
                 <p className={cx('place')}>
                     {dataWeather?.city} , {dataWeather?.country}
