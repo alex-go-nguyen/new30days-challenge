@@ -27,8 +27,10 @@ export interface WeatherAppProps {
 
 export default function WeatherApp({ data }: WeatherAppProps) {
     const { register, handleSubmit, reset } = useForm<UserSubmitForm>();
+
     const [dataWeather, setDataWeather] = useState(data);
-    const CallAPI = async (place: string) => {
+
+    const callAPI = async (place: string) => {
         try {
             const { data } = await axios.get('https://v1.nocodeapi.com/danish/ow/kByYHeRdQCmpeBOG/byCityName', {
                 params: {
@@ -36,7 +38,6 @@ export default function WeatherApp({ data }: WeatherAppProps) {
                 },
             });
             const currentDate = new Date();
-            console.log(data);
             setDataWeather({
                 city: data.name,
                 country: data.sys.country,
@@ -49,14 +50,16 @@ export default function WeatherApp({ data }: WeatherAppProps) {
             });
         } catch (e) {}
     };
-    useEffect(() => {
-        CallAPI('london');
-    }, []);
 
     const onSubmitHandler = (data: UserSubmitForm) => {
-        CallAPI(data.city);
+        callAPI(data.city);
         reset();
     };
+
+    useEffect(() => {
+        callAPI('london');
+    }, []);
+
     return (
         <form className={cx('container')} onSubmit={handleSubmit(onSubmitHandler)} autoComplete="off">
             <style jsx>

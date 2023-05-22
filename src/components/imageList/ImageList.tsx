@@ -21,7 +21,8 @@ export default function ImageList({ data }: ImageListProps) {
     const handleChangeImage = (index: number) => {
         setImageShowId(index);
     };
-
+    const Array = [1, 3, 2];
+    let total = 0;
     return (
         <div className={cx('container')}>
             <div className={cx('image-list')}>

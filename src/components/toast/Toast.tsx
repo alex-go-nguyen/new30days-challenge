@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './Toast.module.scss';
 import { FaCheckCircle, FaExclamationCircle, FaExclamationTriangle } from 'react-icons/fa';

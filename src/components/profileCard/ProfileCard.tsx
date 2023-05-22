@@ -4,9 +4,6 @@ import { FaFacebookF, FaYoutube, FaTiktok, FaGithub } from 'react-icons/fa';
 import Button from '../button/Button';
 
 export interface ProfileCardProps {
-    /**
-     * Provide image url for
-     */
     imageUrl?: string;
 }
 
@@ -40,7 +37,9 @@ export default function ProfileCard({ imageUrl, ...props }: ProfileCardProps) {
                 </span>
             </div>
             <div className={styles.action}>
-                <Button variant="primary" label="Contact me" backgroundColor="#f2726a" />
+                <Button variant="primary" backgroundColor="#f2726a">
+                    Contact me
+                </Button>
             </div>
         </div>
     );
