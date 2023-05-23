@@ -3,20 +3,21 @@ import React, { PropsWithChildren, useState } from 'react';
 export interface LinkProps extends PropsWithChildren {
     page: string;
 }
-const STATUS = {
-    HOVERED: 'hovered',
-    NORMAL: 'normal',
-};
+
+enum Status {
+    Hovered = 'hovered',
+    Normal = 'normal',
+}
 
 export default function Link({ page, children }: LinkProps) {
-    const [status, setStatus] = useState(STATUS.NORMAL);
+    const [status, setStatus] = useState(Status.Normal);
 
     const onMouseEnter = () => {
-        setStatus(STATUS.HOVERED);
+        setStatus(Status.Hovered);
     };
 
     const onMouseLeave = () => {
-        setStatus(STATUS.NORMAL);
+        setStatus(Status.Normal);
     };
 
     return (

@@ -6,17 +6,6 @@ import classNames from 'classnames';
 
 type ModalType = 'success' | 'error';
 
-const getButtonColorByType = (type: ModalType) => {
-    switch (type) {
-        case 'success':
-            return '#45c39d';
-        case 'error':
-            return '#f55462';
-        default:
-            return '#45c39d';
-    }
-};
-
 export interface ModalProps {
     isOpen?: boolean;
     type?: ModalType;
@@ -38,9 +27,7 @@ export default function Modal({ isOpen, onClose, title, type = 'success', childr
                     <div className={styles.content}>
                         {children}
                         <div className={styles.closeBtn} onClick={onClose}>
-                            <Button variant="primary" backgroundColor={getButtonColorByType(type)}>
-                                Close
-                            </Button>
+                            <Button variant="primary">Close</Button>
                         </div>
                     </div>
                 </div>

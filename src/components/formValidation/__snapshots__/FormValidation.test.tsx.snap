@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormValidation component should render correctl 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <div
+    className="heading"
+  >
+    Register
+  </div>
+  <div
+    className="field"
+  >
+    <input
+      name="name"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Username"
+    />
+  </div>
+  <div
+    className="field"
+  >
+    <input
+      name="email"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Email"
+    />
+  </div>
+  <div
+    className="field"
+  >
+    <input
+      name="phone"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Phone"
+    />
+  </div>
+  <div
+    className="field"
+  >
+    <input
+      name="password"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Password"
+      type="password"
+    />
+  </div>
+  <div
+    className="field"
+  >
+    <input
+      name="confirmPassword"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Confirm Password"
+      type="password"
+    />
+  </div>
+  <button
+    className="btn-submit"
+  >
+    Sign up
+  </button>
+  <div
+    className="subscript"
+  >
+    <p>
+      Had an account? 
+      <span
+        className="link"
+      >
+        Sign in
+      </span>
+    </p>
+  </div>
+</form>
+`;

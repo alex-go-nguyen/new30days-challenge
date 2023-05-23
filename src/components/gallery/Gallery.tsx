@@ -4,6 +4,11 @@ import styles from './Gallery.module.scss';
 const cx = classNames.bind(styles);
 import { FaAngleRight, FaAngleLeft, FaTimes } from 'react-icons/fa';
 
+enum Action {
+    Next,
+    Prev,
+}
+
 export type Item = {
     id: number;
     src: string;
@@ -18,30 +23,24 @@ export interface GalleryProps {
 }
 
 export default function Gallery({ isOpen = false, data, index, onClose, onChange }: GalleryProps) {
-    const handleControllingImage = (action: string) => {
-        if (action === 'next') {
-            onChange(index + 1);
-        }
-        if (action === 'prev') {
-            onChange(index - 1);
-        }
-    };
+    const handleControllingImage = (action: Action) => onChange(action === Action.Next ? index + 1 : index - 1);
+
     return (
         <div className={cx('gallery', { show: isOpen })}>
             <span
                 className={cx('control', 'next', { hide: index === data.length - 1 })}
-                onClick={() => handleControllingImage('next')}
+                onClick={() => handleControllingImage(Action.Next)}
             >
                 <FaAngleRight />
             </span>
             <span
                 className={cx('control', 'prev', { hide: index === 0 })}
-                onClick={() => handleControllingImage('prev')}
+                onClick={() => handleControllingImage(Action.Prev)}
             >
                 <FaAngleLeft />
             </span>
             <div className={cx('inner')}>
-                <img src={data[index].src} alt="Squirel" />
+                <img src={data[index]?.src} alt="Squirel" />
             </div>
             <span className={cx('close')} onClick={onClose}>
                 <FaTimes />

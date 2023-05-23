@@ -13,7 +13,7 @@ export interface ImageProps {
     borderRadius?: ImageBorderRadius;
 }
 
-export default function Image({ ratio = 4 / 3, src, alt = 'Squirrel', borderRadius = 'none' }: ImageProps) {
+export default function Image({ ratio = 4 / 3, src, alt, borderRadius = 'none' }: ImageProps) {
     return (
         <div className={cx('container', borderRadius)}>
             <style jsx>

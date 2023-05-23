@@ -1,11 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
-
 import classNames from 'classnames/bind';
 import styles from './FormValidation.module.scss';
 import { yupResolver } from '@hookform/resolvers/yup';
+
 const cx = classNames.bind(styles);
+
 type UserSubmitForm = {
     name: string;
     email: string;
@@ -13,7 +14,8 @@ type UserSubmitForm = {
     password: string;
     confirmPassword: string;
 };
-const schema = yup.object().shape({
+
+const schema = yup.object({
     name: yup.string().required('Vui lòng nhập tên'),
     email: yup.string().email('Vui lòng nhập đúng định dạng email').required('Vui lòng nhập email'),
     phone: yup.string().required('Vui lòng nhập số điện thoại'),
@@ -28,9 +30,11 @@ const schema = yup.object().shape({
         .required('Vui lòng nhập lại mật khẩu'),
 });
 
-export interface FormVadiationProps {}
+export interface FormVadiationProps {
+    onSubmit?: (data: UserSubmitForm) => void;
+}
 
-export default function FormVadiation(props: FormVadiationProps) {
+export default function FormVadiation({ onSubmit }: FormVadiationProps) {
     const {
         register,
         handleSubmit,
@@ -39,6 +43,7 @@ export default function FormVadiation(props: FormVadiationProps) {
     } = useForm<UserSubmitForm>({ resolver: yupResolver(schema) });
 
     const onSubmitHandler = (data: UserSubmitForm) => {
+        onSubmit?.(data);
         alert('Đăng ký thành công');
         reset();
     };

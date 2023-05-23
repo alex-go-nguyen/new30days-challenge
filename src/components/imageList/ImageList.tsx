@@ -4,6 +4,7 @@ import styles from './ImageList.module.scss';
 import Gallery, { Item } from '../gallery/Gallery';
 import Image from '../image/Image';
 import useBoolean from '../../hooks/useBoolean';
+
 const cx = classNames.bind(styles);
 
 export interface ImageListProps {
@@ -12,17 +13,18 @@ export interface ImageListProps {
 
 export default function ImageList({ data }: ImageListProps) {
     const [imageShowId, setImageShowId] = useState(0);
+
     const { value, setTrue, setFalse } = useBoolean(false);
 
     const handleChooseImage = (index: number) => {
         setImageShowId(index);
         setTrue();
     };
+
     const handleChangeImage = (index: number) => {
         setImageShowId(index);
     };
-    const Array = [1, 3, 2];
-    let total = 0;
+
     return (
         <div className={cx('container')}>
             <div className={cx('image-list')}>

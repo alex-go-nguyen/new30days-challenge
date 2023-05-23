@@ -11,7 +11,7 @@ export interface ToastProps {
     message?: string;
 }
 
-export default function Toast({ variant = 'success', isOpen, message = 'This is success message!' }: ToastProps) {
+export default function Toast({ variant = 'success', isOpen, message }: ToastProps) {
     return (
         <div className={cx('toast', variant, { isOpened: isOpen })}>
             <span className={cx('icon')}>

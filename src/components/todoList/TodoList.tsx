@@ -2,7 +2,6 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-
 import classNames from 'classnames/bind';
 import styles from './TodoList.module.scss';
 import { FaTrash } from 'react-icons/fa';
@@ -23,7 +22,7 @@ type UserSubmitForm = {
     todo: string;
 };
 
-const schema = yup.object().shape({
+const schema = yup.object<UserSubmitForm>({
     todo: yup.string().required(),
 });
 
@@ -35,14 +34,13 @@ export default function TodoList({ data = [] }: TodoListProps) {
         formState: { errors },
         reset,
     } = useForm<UserSubmitForm>({ resolver: yupResolver(schema) });
+
     const onSubmitHandler = (data: UserSubmitForm) => {
         setTodos((prev) => [...prev, { id: uuidv4(), content: data.todo }]);
         reset();
     };
 
-    const handleRemoveTodo = (id: string) => {
-        setTodos((prev) => prev.filter((item) => item.id !== id));
-    };
+    const handleRemoveTodo = (id: string) => setTodos((prev) => prev.filter((item) => item.id !== id));
 
     return (
         <div className={cx('container')}>

@@ -4,19 +4,14 @@ import { FaFacebookF, FaYoutube, FaTiktok, FaGithub } from 'react-icons/fa';
 import Button from '../button/Button';
 
 export interface ProfileCardProps {
-    imageUrl?: string;
+    imageUrl: string;
 }
 
-export default function ProfileCard({ imageUrl, ...props }: ProfileCardProps) {
+export default function ProfileCard({ imageUrl }: ProfileCardProps) {
     return (
         <div className={styles.card}>
             <div className={styles.avatar}>
-                <img
-                    src={
-                        imageUrl ? imageUrl : 'https://harpersbazaar.com.au/wp-content/uploads/2022/11/jack-titanic.jpg'
-                    }
-                    alt="Avatar"
-                />
+                <img src={imageUrl} alt="Avatar" />
             </div>
             <div className={styles.description}>
                 <p className={styles.name}>Duy Thanh</p>
@@ -37,9 +32,7 @@ export default function ProfileCard({ imageUrl, ...props }: ProfileCardProps) {
                 </span>
             </div>
             <div className={styles.action}>
-                <Button variant="primary" backgroundColor="#f2726a">
-                    Contact me
-                </Button>
+                <Button variant="primary">Contact me</Button>
             </div>
         </div>
     );
