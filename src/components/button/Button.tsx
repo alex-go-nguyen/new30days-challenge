@@ -1,44 +1,26 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import styles from './Button.module.scss';
 import classNames from 'classnames';
 
-type ButtonVariant = 'primary' | 'secondary';
-type ButtonSize = 'sm' | 'md' | 'lg';
+export type ButtonVariant = 'primary' | 'secondary';
 
-interface ButtonProps {
+export type ButtonSize = 'sm' | 'md' | 'lg';
+
+interface ButtonProps extends PropsWithChildren {
     size?: ButtonSize;
-    /**
-     * What color of the button's background?
-     */
-    backgroundColor?: string;
-    /**
-     * Button contents
-     */
-    label: string;
-    /**
-     * Choose hoverColor
-     */
-    hoverColor?: string;
-    /**
-     * Active or disable button
-     */
+    color?: string;
     disabled?: boolean;
-    /**
-     * Set up onclick
-     */
     onClick?: () => void;
-
     variant?: ButtonVariant;
 }
 
 export default function Button({
     size = 'md',
     variant = 'primary',
-    label,
-    backgroundColor,
-    hoverColor,
+    color = 'success',
     disabled,
     onClick,
+    children,
 }: ButtonProps) {
     return (
         <button
@@ -48,18 +30,11 @@ export default function Button({
                 [styles.disabled]: disabled,
                 [styles.button]: true,
                 [styles[size]]: true,
+                [styles[color]]: true,
             })}
             onClick={onClick}
         >
-            {label}
-            <style jsx>{`
-                button {
-                    background-color: ${backgroundColor};
-                }
-                button:hover {
-                    background-color: ${hoverColor};
-                }
-            `}</style>
+            {children}
         </button>
     );
 }

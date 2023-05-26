@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image component should render correctly 1`] = `
+<div
+  className="container none"
+>
+  <style
+    jsx={true}
+  >
+    
+                    div {
+                        aspect-ratio: 1.3333333333333333;
+                    }
+                
+  </style>
+  <img
+    className="image"
+    src="./cold.png"
+  />
+</div>
+`;

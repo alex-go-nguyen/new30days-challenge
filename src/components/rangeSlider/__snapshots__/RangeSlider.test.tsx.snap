@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RangeSlider should render correctly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="bar"
+    style={
+      {
+        "width": "0%",
+      }
+    }
+  >
+    0
+    %
+  </div>
+</div>
+`;

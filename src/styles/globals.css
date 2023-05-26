@@ -19,6 +19,13 @@
     --light-blue: #78c0c9;
     --sea-blue: #17a2b8;
     --green-color: #9acd32;
+    --purple-color: #6a59d3;
+    --success-color: #8ec391;
+    --warning-color: #f4d291;
+    --error-color: #f49091;
+    --border-success-color: #008000;
+    --border-warning-color: #ffa500;
+    --border-error-color: #ff0000;
 }
 
 @media (prefers-color-scheme: dark) {

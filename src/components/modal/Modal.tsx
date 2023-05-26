@@ -1,21 +1,10 @@
-import React, { useState, useEffect, ReactNode, PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 import styles from './Modal.module.scss';
 import { IoMdClose } from 'react-icons/io';
 import Button from '../button/Button';
 import classNames from 'classnames';
 
 type ModalType = 'success' | 'error';
-
-const getButtoncolorByType = (type: ModalType) => {
-    switch (type) {
-        case 'success':
-            return '#45c39d';
-        case 'error':
-            return '#f55462';
-        default:
-            return '#45c39d';
-    }
-};
 
 export interface ModalProps {
     isOpen?: boolean;
@@ -38,7 +27,7 @@ export default function Modal({ isOpen, onClose, title, type = 'success', childr
                     <div className={styles.content}>
                         {children}
                         <div className={styles.closeBtn} onClick={onClose}>
-                            <Button variant="primary" label="Close" backgroundColor={getButtoncolorByType(type)} />
+                            <Button variant="primary">Close</Button>
                         </div>
                     </div>
                 </div>

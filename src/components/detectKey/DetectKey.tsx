@@ -9,6 +9,7 @@ type KeyboardDetail = Pick<KeyboardEvent, 'key' | 'location' | 'which' | 'code'>
 
 export default function DetectKey() {
     const [keyDetail, setKeyDetail] = useState<KeyboardDetail>();
+
     const keyDownHandler = ({ key, location, which, code }: KeyboardEvent) => {
         setKeyDetail({
             key,
@@ -32,10 +33,10 @@ export default function DetectKey() {
                 <>
                     <div className={cx('result')}>{keyDetail.which}</div>
                     <div className={cx('details')}>
-                        <Card title="Key" content={keyDetail.key.toLocaleUpperCase()} />
-                        <Card title="Location" content={String(keyDetail.location)} />
-                        <Card title="Which" content={String(keyDetail.which)} />
-                        <Card title="Code" content={keyDetail.code} />
+                        <Card title="Key">{keyDetail.key.toLocaleUpperCase()}</Card>
+                        <Card title="Location">{String(keyDetail.location)}</Card>
+                        <Card title="Which">{String(keyDetail.which)}</Card>
+                        <Card title="Code">{keyDetail.code}</Card>
                     </div>
                 </>
             )}

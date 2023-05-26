@@ -13,7 +13,7 @@ type Story = StoryObj<typeof Button>;
 export const Default: Story = {
     args: {
         variant: 'primary',
-        label: 'Button',
+        children: 'Button',
     },
 };
 
@@ -21,7 +21,7 @@ export const Small: Story = {
     args: {
         size: 'sm',
         variant: 'primary',
-        label: 'Button',
+        children: 'Button',
     },
 };
 
@@ -29,7 +29,7 @@ export const Medium: Story = {
     args: {
         size: 'md',
         variant: 'primary',
-        label: 'Button',
+        children: 'Button',
     },
 };
 
@@ -37,6 +37,6 @@ export const Large: Story = {
     args: {
         size: 'lg',
         variant: 'primary',
-        label: 'Button',
+        children: 'Button',
     },
 };
