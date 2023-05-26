@@ -1,0 +1,18 @@
+@import '../../styles/globals.css';
+
+.container {
+    width: 100%;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--white-color);
+    cursor: e-resize;
+}
+
+.bar {
+    text-align: center;
+    padding: 8px 0;
+    font-size: 20px;
+    background-image: linear-gradient(to right, #8c6ac2, #246bac);
+    color: var(--white-color);
+}

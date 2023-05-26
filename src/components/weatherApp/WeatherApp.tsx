@@ -26,6 +26,7 @@ export interface WeatherAppProps {
 }
 
 export default function WeatherApp({ data, onSubmit }: WeatherAppProps) {
+    var a: number = 12;
     const { register, handleSubmit, reset } = useForm<UserSubmitForm>();
 
     const onSubmitHandler = (data: UserSubmitForm) => {
